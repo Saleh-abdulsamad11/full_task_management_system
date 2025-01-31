@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loged in</title>
+    <style>
+        body{
+            background: linear-gradient(-45deg, rgb(195, 0, 255), orange);
+            text-align: center;
+        }
+        h2{
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+        a{
+            background-color: hsl(184, 100%, 50%);
+            padding: 5px;
+            /* float: right; */
+            text-align: center;
+            color: white; 
+            cursor: pointer; 
+            text-decoration: none;
+            border-radius: 5px;
+            overflow: hidden;
+            font-size:1.5rem; 
+            font-weight: bold;
+        }
+        a:hover{
+            background-color: hsl(187, 100%, 30%);
+        }
+        a:active{
+            transform: scale(0.85);
+        }
+    </style>
+</head>
+<body>
+    
+    <h1> Profile Page! </h1>
+    <div>
+        <% if(session.userid) { %>
+            <h2> Hi user, welcome! 🤝</h2>
+            <a href="/logout">Logout</a>
+
+            <% } else { %>
+                res.redirect("/login")
+       <% } %>
+    </div>
+</body>
+</html>

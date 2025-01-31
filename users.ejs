@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Users - My Node App</title>
+    <style>
+      body{
+        background: linear-gradient(-45deg, rgb(195, 0, 255), orange);
+      }
+      #btn{
+        background-color: hsl(184, 100%, 50%);
+        padding: 5px;
+        float: right;
+        text-decoration: none;
+        color: white; 
+        cursor: pointer; 
+        border-radius: 5px;
+        overflow: hidden;
+        font-size:1.5rem; 
+        font-weight: bold;
+        margin: 15px;
+        padding: 10px;
+      }
+      #btn:hover{
+        background-color: hsl(184, 100%, 30%);
+        color: white;
+      }
+      #btn:active{
+        transform: scale(0.95);
+      }
+      .users{
+        color: white;
+        text-align: center;
+        font-size: 3.5rem;
+      }
+      .table{
+        background-color: hsla(0, 0%, 100%, 0.144);
+        border-radius: 10px;
+      }
+      .th{
+        background-color: hsla(0, 0%, 95%, 0.5);
+        width: 350px;
+        height: 50px;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .td{
+        background-color: hsla(0, 0%, 95%, 0.144);
+        width: 350px;
+        height: 50px;
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 25px;
+      }
+      .edit{
+        background-color: hsl(184, 100%, 50%);
+        border: none;
+        border-radius: 3px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin: 15px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .edit:hover{
+        background-color: hsl(184, 100%, 30%)
+      }
+      .edit:active{
+        transform: scale(0.95);
+      }
+      .delete{
+        background-color: hsl(14, 97%, 56%);
+        border: none;
+        border-radius: 3px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin: 15px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .delete:hover{
+        background-color: hsl(14, 97%, 40%)
+      }
+      .delete:active{
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="users">Users</h1>
+    <table class="table">
+      <thead>
+        <th class="th">User Id</th>
+        <th class="th">User Name</th>
+        <th class="th">Email</th>
+        <th class="th">Password</th>
+        <th class="th">Action</th>
+      </thead>
+      <tbody>
+        <% if (users) { %> <% users.forEach((user) => { %>
+        <tr>
+          <td class="td"><%= user.userid %></td>
+          <td class="td"><%= user.username %></td>
+          <td class="td"><%= user.email %></td>
+          <td class="td"><%= user.password %></td>
+          <td class="td"><a href="/user/<%=user.userid %>" class="edit">Edit</a> <a href="/userdelete/<%= user.userid %>" class="delete">Delete</a></td>
+        </tr><!-- <%= user.userid %> -->
+        <% }); %> <% } else { %>
+        <p>Error Occurred</p>
+        <% } %>
+      </tbody>
+    </table><br>
+
+    <a href="/users/add" id="btn">Add User</a>  
+  </body>
+</html>

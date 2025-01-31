@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100px;
+            background: linear-gradient(-45deg, rgb(195, 0, 255), orange);
+        }
+        #form{
+            background: #222; 
+            width: 350px;
+            height: 200px;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            margin: 25px;
+            position: fixed;
+            top: 25%;
+            left: 50%;
+            margin-top: -140px;
+            margin-left: -240px;
+            padding:40px;
+            display: table;
+            box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.5);
+            border-radius: 15px;
+        }
+        #text{
+            font-size: 1.5rem;
+            margin: 35px;
+            font-weight: bold;
+            color: rgb(20, 180, 255);
+        }
+        .input1{
+            margin-bottom: 20px;
+            margin-top: 20px;
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 15px;
+            background: #333;
+            color: white;
+            border: 1.5px solid #00b4f6;
+        }
+        .input1{
+            height: 50px;
+        }
+        .input2{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 15px;
+            background: #333;
+            color: white;
+            border: 1.5px solid #00b4f6;
+            margin-bottom: 20px;
+        }
+        .input2{
+            height: 50px;
+        }
+        .input3{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 15px;
+            background: #333;
+            color: white;
+            border: 1.5px solid #00b4f6;
+            margin-bottom: 20px;
+        }
+        .input3{
+            height: 50px;
+        }
+        .input4{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 15px;
+            background: #333;
+            color: white;
+            border: 1.5px solid #00b4f6;
+            margin-bottom: 20px;
+        }
+        .input4{
+            height: 50px;
+        }
+        .input5{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            font-size: 15px;
+            background: #333;
+            color: white;
+            border: 1.5px solid #00b4f6;
+            margin-bottom: 20px;
+        }
+        .input5{
+            height: 50px;
+        }
+        button{
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(20, 180, 255);
+            color: white;
+            margin-top: 15px;
+            margin: 25px 0 6px;
+        }
+        button:hover{
+            background-color: rgb(70, 86, 255);
+            color: white;
+        }
+        button:active{
+            transform: scale(0.95);
+        }
+        .p{
+            font-size: 1.5rem;
+            margin: 35px;
+            font-weight: bold;
+            color: rgb(20, 180, 255);
+        }
+    </style>
+</head>
+<body>
+        <form action="/edituser" method="post" id="form">
+
+                <% if (user) { %> <% user.forEach((user) => { %>
+            <div>
+                <label for="username" id="text">username</label>
+                <input type="text" name="username" value="<%= user.username %>" class="input1"> 
+            </div><br>
+            <div>
+                <label for="email" id="text">email</label>
+                <input type="email" value="<%= user.email %>" name="email" class="input2">
+            </div><br>
+            <div>
+                <label for="password" id="text">password</label>
+                <input type="password" value="<%= user.password %>" name="password" class="input3" min = "4" max="8">
+                <% }) %>
+                <% } %>
+            </div><br>
+            <button>save</button>
+        </form>
+</body>
+
+</html>
