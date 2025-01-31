@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body{
+            background: linear-gradient(-45deg, rgb(195, 0, 255), orange);
+            text-align: center;
+        }
+        .Welcome{
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+        #listBtn{
+            background-color: hsl(184, 100%, 50%);
+            padding: 5px;
+            /* float: right; */
+            text-align: center;
+            color: white; 
+            cursor: pointer; 
+            border-radius: 5px;
+            overflow: hidden;
+            font-size:1.5rem; 
+            font-weight: bold;
+        }
+        #listBtn:hover{
+            background-color: hsl(187, 100%, 30%);
+        }
+        #listBtn:active{
+            transform: scale(0.85);
+        }
+    </style>
+</head>
+<body>
+    <h2 class="Welcome">Welcome User 🤝 </h2>
+    <br>
+        <br>
+            <br>
+        <a href="/users" id="listBtn">Users List</a>
+</body>
+</html>
